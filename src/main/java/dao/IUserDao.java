@@ -13,4 +13,17 @@ public interface IUserDao {
      * @return
      */
     List<User> findAll();
+
+    /**
+     * 增加
+     * @param user
+     */
+
+    void addUser(User user);
+
+    void deleteUser(int id);
+
+    void updateUser(User user);
+
+    User findById(int id);
 }

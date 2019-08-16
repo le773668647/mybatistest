@@ -6,4 +6,16 @@
     <select id="findAll" resultType="as.User">
         select * from doctor
     </select>
+    <insert id="addUser" parameterType="as.User">
+        insert into doctor (id,name,object,password) values (#{id},#{name},#{object},#{password})
+    </insert>
+    <delete id="deleteUser" parameterType="int">
+        delete from doctor where id = #{id}
+    </delete>
+    <update id="updateUser" parameterType="as.User" >
+        update doctor set name =#{name},object=#{object},password=#{password} where id=#{id}
+    </update>
+    <select id="findById" parameterType="int" resultType="as.User">
+        select * from doctor where id=#{id}
+    </select>
 </mapper>
